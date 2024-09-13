@@ -44,6 +44,7 @@ def is_night():
 # BONUS: run the code every 60 seconds.
 
 while True:
+    time.sleep(60)
     if iss_overhead() and is_night():
         with smtplib.SMTP(SERVER, 587) as connection:
             connection.starttls()
@@ -52,4 +53,3 @@ while True:
                                 to_addrs=EMAIL,
                                 msg=f"ISS Overhead\n\n ISS Overhead"
                                 )
-    time.sleep(60)
